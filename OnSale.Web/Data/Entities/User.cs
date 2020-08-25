@@ -31,7 +31,7 @@ namespace OnSale.Web.Data.Entities
         //TODO: Pending to put the correct paths
         [Display(Name = "Image")]
         public string ImageFullPath => ImageId == Guid.Empty
-            ? $"https://localhost:44325/images/noimage.png"
+            ? $"https://onsalewebgoez.azurewebsites.net/images/noimage.png"
             : $"https://onsale.blob.core.windows.net/users/{ImageId}";
 
         [Display(Name = "User Type")]

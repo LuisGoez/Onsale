@@ -25,17 +25,27 @@ namespace OnSale.Web.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Country>()
-                .HasIndex(c => c.Name)
-                .IsUnique();
+            modelBuilder.Entity<Country>(cou =>
+            {
+                cou.HasIndex("Name").IsUnique();
+                cou.HasMany(c => c.Departments).WithOne(d => d.Country)
+                .OnDelete(DeleteBehavior.Cascade);
+            });
 
-            modelBuilder.Entity<Department>()
-                .HasIndex(d => d.Name)
-                .IsUnique();
+            modelBuilder.Entity<Department>(dep =>
+            {
+                dep.HasIndex("Name", "CountryId").IsUnique();
+                dep.HasOne(d => d.Country).WithMany(c => c.Departments)
+                .OnDelete(DeleteBehavior.Cascade);
+            });
 
-            modelBuilder.Entity<City>()
-                .HasIndex(c => c.Name)
-                .IsUnique();
+            modelBuilder.Entity<City>(cit =>
+            {
+                cit.HasIndex("Name", "DepartmentId").IsUnique();
+                cit.HasOne(c => c.Department).WithMany(d => d.Cities)
+                .OnDelete(DeleteBehavior.Cascade);
+            });
+
 
             modelBuilder.Entity<Category>()
                .HasIndex(t => t.Name)
