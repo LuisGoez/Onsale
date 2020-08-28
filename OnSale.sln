@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnSale.Common", "OnSale.Com
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnSale.Web", "OnSale.Web\OnSale.Web.csproj", "{6C1ED235-A84E-4FDC-A03C-92EABAE4B155}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onsale.Prism", "Onsale.Prism\Onsale.Prism\Onsale.Prism.csproj", "{D45FAEEC-42F8-4D01-862C-1042D6E7FA62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onsale.Prism", "Onsale.Prism\Onsale.Prism\Onsale.Prism.csproj", "{D45FAEEC-42F8-4D01-862C-1042D6E7FA62}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onsale.Prism.Android", "Onsale.Prism\Onsale.Prism.Android\Onsale.Prism.Android.csproj", "{0C93CA32-B82D-4AD9-B908-1861120F3174}"
 EndProject
