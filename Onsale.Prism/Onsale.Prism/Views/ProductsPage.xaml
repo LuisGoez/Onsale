@@ -24,6 +24,9 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SelectProductCommand}"/>
+                            </Grid.GestureRecognizers>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
@@ -60,7 +63,7 @@
                 	                   AbsoluteLayout.LayoutFlags="All"
                 	                   BackgroundColor="Transparent"
                 	                   HorizontalOptions="Center"
-                	                   TextColor="White"
+                	                   TextColor="Black"
                 	                   IsBusy="{Binding IsRunning}"
                 	                   Title="Loading..."
                 	                   VerticalOptions="Center"
