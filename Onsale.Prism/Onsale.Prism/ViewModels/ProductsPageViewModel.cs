@@ -1,4 +1,5 @@
 ﻿
+using Onsale.Prism.Helpers;
 using Onsale.Prism.ItemViewModels;
 using OnSale.Common.Entities;
 using OnSale.Common.Responses;
@@ -25,7 +26,7 @@ namespace Onsale.Prism.ViewModels
         public ProductsPageViewModel(INavigationService navigationService, IApiService apiService)
             : base(navigationService)
         {
-            Title = "Products";
+            Title = Languages.Products;
             _navigationService = navigationService;
             _apiService = apiService;
             LoadProductsAsync();
@@ -61,7 +62,7 @@ namespace Onsale.Prism.ViewModels
         {
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
-                await App.Current.MainPage.DisplayAlert("Error", "Check the internet connection.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.ConnectionError, Languages.Accept);
                 return;
             }
             IsRunning = true;
@@ -73,10 +74,7 @@ namespace Onsale.Prism.ViewModels
             IsRunning = false;
             if (!response.IsSuccess)
             {
-                await App.Current.MainPage.DisplayAlert(
-                    "Error",
-                    response.Message,
-                    "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error, response.Message, Languages.Accept);
                 return;
             }
 
@@ -118,7 +116,7 @@ namespace Onsale.Prism.ViewModels
                     .ToList());
             }
 
-            }
         }
+    }
 }
 

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace OnSale.Common.Responses
+﻿namespace OnSale.Common.Responses
 {
     public class Response
     {

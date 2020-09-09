@@ -7,14 +7,16 @@
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true"
              xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             xmlns:i18n="clr-namespace:Onsale.Prism.Helpers"
              x:Class="Onsale.Prism.Views.ProductsPage"
+             BackgroundColor="{StaticResource ColorBackground}"
              Title="{Binding Title}">
 
     <AbsoluteLayout>
         <StackLayout Padding="5"
                      AbsoluteLayout.LayoutBounds="0,0,1,1"
                      AbsoluteLayout.LayoutFlags="All">
-            <SearchBar Placeholder="Search a product..."
+            <SearchBar Placeholder="{i18n:Translate SearchProduct}"
                 SearchCommand="{Binding SearchCommand}"
                 Text="{Binding Search}"/>
             <CollectionView ItemsSource="{Binding Products}">
@@ -61,11 +63,11 @@
         <busyindicator:SfBusyIndicator AnimationType="Gear" 
                                        AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
                 	                   AbsoluteLayout.LayoutFlags="All"
-                	                   BackgroundColor="Transparent"
+                	                   BackgroundColor="{StaticResource ColorAccent}"
                 	                   HorizontalOptions="Center"
-                	                   TextColor="Black"
+                	                   TextColor="{StaticResource ColorFontInverse}"
                 	                   IsBusy="{Binding IsRunning}"
-                	                   Title="Loading..."
+                	                   Title="{i18n:Translate Loading}"
                 	                   VerticalOptions="Center"
                 	                   ViewBoxWidth="80"
                 	                   ViewBoxHeight="80" />
