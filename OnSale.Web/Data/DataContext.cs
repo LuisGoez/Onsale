@@ -19,7 +19,7 @@ namespace OnSale.Web.Data
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
-
+        public DbSet<Qualification> Qualifications { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
